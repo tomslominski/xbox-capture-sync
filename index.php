@@ -91,7 +91,7 @@ class Xbox_Capture_Sync {
 				$property = $type->get_response_property();
 
 				if( isset( $response->$property ) && is_array( $response->$property ) ) {
-					return array_slice( $response->$property, 0, 3 );
+					return $response->$property;
 				} else {
 					throw new Exception( sprintf( 'Failed to decode %s response.', $type->name ) );
 				}
